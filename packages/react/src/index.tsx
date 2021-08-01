@@ -16,3 +16,5 @@ export function Bold({ message }: { message: string }) {
 export function Zop({ message }: { message: string }) {
   return <i>{message}</i>;
 }
+
+export {Button} from "./components/atoms/button"
