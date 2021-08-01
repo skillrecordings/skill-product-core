@@ -1,8 +1,3 @@
-/**
- * Return a slugified copy of a string.
- *
- * @param string - The string to be slugified
- */
 export function toSlug(str: string): string {
   let s = str;
   if (!s) {
@@ -17,10 +12,6 @@ export function toSlug(str: string): string {
   return s;
 }
 
-/**
- * Convert a phone number from E.164 format into (212)-555-9656 format
- * @param phone - An unformatted 12-digit phone number string
- */
 export function fromPhoneE164(phone: string): string {
   if (phone.length === 12) {
     return (
