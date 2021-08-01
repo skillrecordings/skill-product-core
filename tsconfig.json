@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.build.json",
+  "include": ["packages", "types", "scripts", "example"],
+  "compilerOptions": {
+    "allowJs": false,
+    "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "paths": {
+      "@skillrecordings/utils": ["packages/utils/src"],
+      "@skillrecordings/react": ["packages/react/src"],
+      "$test/*": ["test/*"]
+    }
+  }
+}
