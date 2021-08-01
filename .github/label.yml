@@ -10,6 +10,14 @@ utils:
   - packages/utils/*
   - packages/utils/**/*
 
+admin:
+  - packages/admin/*
+  - packages/admin/**/*
+
+users:
+  - packages/admin/*
+  - packages/admin/**/*
+
 cypress:
   - cypress/*
   - cypress/**/*
