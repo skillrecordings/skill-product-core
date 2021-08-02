@@ -2,7 +2,7 @@
   "name": "@skillrecordings/core",
   "version": "0.0.1",
   "description": "Internal, shared utilities",
-  "author": "Jared Palmer",
+  "author": "Joel Hooks",
   "scripts": {
     "start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean",
     "build": "tsdx build --tsconfig tsconfig.build.json",
