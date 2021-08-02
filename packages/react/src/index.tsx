@@ -1,20 +1,20 @@
-import * as React from 'react';
-import { toSlug } from '@skillrecordings/utils';
+import * as React from 'react'
+import {toSlug} from '@skillrecordings/utils'
 
 export interface SlugProps {
-  message: string;
+  message: string
 }
 
 export function Slug(props: SlugProps) {
-  return <>{toSlug(props.message)}</>;
+  return <>{toSlug(props.message)}</>
 }
 
-export function Bold({ message }: { message: string }) {
-  return <b>{message}</b>;
+export function Bold({message}: {message: string}) {
+  return <b>{message}</b>
 }
 
-export function Zop({ message }: { message: string }) {
-  return <i>{message}</i>;
+export function Zop({message}: {message: string}) {
+  return <i>{message}</i>
 }
 
-export {Button} from "./components/atoms/button"
+export {Button} from './components/atoms/button'
