@@ -1,6 +1,6 @@
 import React from 'react'
 import ClaimCouponOverlay from 'components/commerce/claim-coupon-overlay'
-import {useCommerceMachine} from 'hooks/use-commerce-machine'
+import {useCommerceMachine} from '@skillrecordings/core'
 import get from 'lodash/get'
 import {SellableResource} from '@types'
 

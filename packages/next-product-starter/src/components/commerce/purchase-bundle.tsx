@@ -3,11 +3,11 @@ import {SellableResource, Price, Coupon} from '@types'
 import Countdown from 'components/commerce/countdown'
 import ParityCouponMessage from 'components/commerce/parity-coupon-message'
 import StripeCheckout, {StripeCheckoutProps} from 'react-stripe-checkout'
-import {useCommerceMachine} from 'hooks/use-commerce-machine'
 import {useViewer} from 'contexts/viewer-context'
 import {motion} from 'framer-motion'
 import {isEmpty, get, find, noop} from 'lodash'
 import Spinner from 'components/spinner'
+import {useConvertkit, useCommerceMachine} from '@skillrecordings/core'
 
 // problem with `react-stripe-checkout` not having these types
 // https://github.com/azmenak/react-stripe-checkout/pull/152
@@ -82,7 +82,7 @@ const PurchaseBundle = ({
     'individual',
   )
   const [isPPP, setIsPPP] = React.useState(false)
-  // const {subscriber} = useConvertkit()
+  const {subscriber} = useConvertkit()
   const isProPackage = bundle.slug === process.env.NEXT_PUBLIC_PRO_SLUG
 
   const isPurchasing =
@@ -278,7 +278,7 @@ const PurchaseBundle = ({
               </label>
               <input
                 value={state.context.quantity}
-                onChange={(event) => {
+                onChange={event => {
                   const newQuantity = Number(event.target.value)
                   const isBulk = newQuantity > 1
                   if (isBulk) {

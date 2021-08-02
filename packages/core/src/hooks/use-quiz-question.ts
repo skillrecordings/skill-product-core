@@ -2,14 +2,9 @@ import axios from 'axios'
 import {useFormik} from 'formik'
 import {every, find, isArray, map} from 'lodash'
 import isEmpty from 'lodash/isEmpty'
-import type {Question} from 'pages/answer'
 import React from 'react'
 import * as Yup from 'yup'
-
-type Choice = {
-  answer: string
-  label: string
-}
+import {Question, Choice} from '../@types'
 
 function useQuestion(question: Question) {
   const [answer, setAnswer] = React.useState<any>()
@@ -30,13 +25,15 @@ function useQuestion(question: Question) {
               .required('Please pick at least one option.')
               .label('Options')
               .nullable()
-          : Yup.string().required('Please pick an option.').nullable()
+          : Yup.string()
+              .required('Please pick an option.')
+              .nullable()
         : Yup.string()
             .nullable()
             .required(`Can't stay empty. Mind to elaborate? :)`),
       // comment: Yup.string().nullable().required(),
     }),
-    onSubmit: async (values) => {
+    onSubmit: async values => {
       // await new Promise((r) => setTimeout(r, 500))
       setSubmitting(true)
       axios

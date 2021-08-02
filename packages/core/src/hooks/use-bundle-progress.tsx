@@ -3,7 +3,7 @@ import filter from 'lodash/filter'
 import find from 'lodash/find'
 import {useLocalStorage} from 'react-use'
 import useSWR from 'swr'
-import axios from 'utils/axios'
+import axios from '../utils/axios'
 
 const fetcher = (url: string) => {
   return axios.get(
@@ -23,7 +23,7 @@ const useBundleProgress = (bundle: any) => {
   const {data}: any = useSWR(swrKey, fetcher, {
     revalidateOnMount: true,
     initialData: progressDefault,
-    onSuccess: (progress) => writeStorage(progress),
+    onSuccess: progress => writeStorage(progress),
   })
 
   const getModuleProgress = (slug: string) => {
@@ -37,7 +37,7 @@ const useBundleProgress = (bundle: any) => {
     )
     const completedLessons = filter(
       get(currentProgress, 'resources', []),
-      (resource) => resource.state === 'completed',
+      resource => resource.state === 'completed',
     )
 
     const totalLessons = get(currentProgress, 'lesson_count', 1)

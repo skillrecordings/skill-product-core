@@ -1,4 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
+import useConvertkit from './hooks/use-convertkit'
+import {useCommerceMachine} from './hooks/use-commerce-machine'
 
 declare global {
   interface Window {
@@ -10,7 +12,4 @@ declare global {
   }
 }
 
-// Delete me
-export const Thing = () => {
-  return <div>the snozzberries taste like snozzberries</div>;
-};
+export {useConvertkit, useCommerceMachine}
