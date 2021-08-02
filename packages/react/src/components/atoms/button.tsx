@@ -19,9 +19,18 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <>
-      <div className="buttonWrapper">
+      <div className="buttonWrapper" style={{padding: '10px'}}>
         <button
           className={`${className} ${'button'}`}
+          style={{
+            padding: '20px',
+            background: buttonType === 'next' ? '#32a852' : '#33598f',
+            color: '#ffffff',
+            border: '1px solid #ffffff',
+            borderRadius: '15px',
+            cursor: 'pointer',
+            fontSize: '20px',
+          }}
           id={id}
           {...props}
           onClick={onClick}
@@ -29,23 +38,6 @@ export const Button: React.FC<ButtonProps> = ({
           {props.children}
         </button>
       </div>
-      <style jsx>
-        {`
-          .buttonWrapper {
-            padding: 10px;
-          }
-
-          .button {
-            padding: 20px;
-            background: ${buttonType === 'next' ? `#32a852` : `#33598f`};
-            color: #ffffff;
-            border: 1px solid #ffffff;
-            border-radius: 15px;
-            cursor: pointer;
-            font-size: 20px;
-          }
-        `}
-      </style>
     </>
   )
 }
