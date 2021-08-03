@@ -6,9 +6,6 @@
     "baseUrl": ".",
     "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
-      "@skillrecordings/utils": ["packages/utils/src"],
-      "@skillrecordings/react": ["packages/react/src"],
-      "@skillrecordings/core": ["packages/core/src"],
       "$test/*": ["test/*"]
     }
   }
