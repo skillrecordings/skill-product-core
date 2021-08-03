@@ -31,10 +31,17 @@ export default function Home() {
             <div className="w-24 mx-auto pb-5">
               <FerrisOnCogwheel />
             </div>
-            <h2 className="text-center text-4xl font-bold pb-8">
-              Jump in, we're going to learn Rust!
-            </h2>
-            <ConvertkitSubscribeForm />
+            <div className="pb-8 text-center">
+              <h2 className="max-w-sm mx-auto sm:text-4xl text-3xl font-bold">
+                Jump in, we're going to learn Rust!
+              </h2>
+              <h3 className="sm:text-xl text-lg pt-3 text-brand-orange-600">
+                Get a head start with my free 5-Part email course.
+              </h3>
+            </div>
+            <div className="max-w-sm mx-auto">
+              <ConvertkitSubscribeForm />
+            </div>
           </div>
         </section>
       </main>
